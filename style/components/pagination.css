@@ -1,0 +1,24 @@
+.pagination-header {
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.pagination-header a {
+    font-size: 22px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #00dcc2;
+    transition: .3s;
+}
+
+.pagination-header a:hover {
+    color: #4e76ee;
+}
+
+.pagination-item {
+    margin-right: 10px;
+}
+
+.pagination-item.active {
+    color: #4e76ee;
+}

@@ -1,0 +1,65 @@
+.button {
+    height: 50px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    background-color: #00dcc2;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.profile_button {
+    display: flex;
+    color: #fff;
+    height: 36px;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 15px;
+    background-color: #00dcc2;
+    border-radius: 6px;
+    transition: .3s;
+}
+    
+.button:hover {
+    background-color: #5192e2;
+}
+
+.button > img {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px; 
+}
+
+.button-search {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.button-yellow {
+    background-color: #51fa78;
+    color: #000;
+}
+
+.button-yellow:hover {
+    background-color: #4e76ee;
+    color: #000;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.button-danger{
+    text-decoration: none;
+    background-color: #FF0000;
+    color: #fff;
+}

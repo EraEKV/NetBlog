@@ -1,0 +1,11 @@
+.text-danger {
+    color: #ff0000;
+}
+
+.blog_link {
+    color: #00dcc2;
+    transition: .3s;
+}
+.blog_link:hover {
+    color: #4e76ee;
+}

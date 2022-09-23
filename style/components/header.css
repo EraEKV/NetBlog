@@ -1,0 +1,29 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 130px;
+    align-items: center;
+    background-color: #fff;
+}
+
+.header-logo a{
+    font-size: 50px;
+    color: #00dcc2;
+    text-decoration: none;
+}
+
+.header-logo a span {
+    color: #f5384e;
+}
+
+.header-search {
+    display: flex;
+    justify-content: center;
+}
+
+.avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 100%;
+}
