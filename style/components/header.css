@@ -4,18 +4,30 @@
     justify-content: space-between;
     height: 130px;
     align-items: center;
-    background-color: #fff;
+    background-color: #22303c;
 }
 
 .header-logo a{
+    font-family: 'Comfortaa', cursive;
     font-size: 50px;
-    color: #00dcc2;
+    color: #1d9bf0;
     text-decoration: none;
+    transition: .4s;
+}
+.header-logo a:hover {
+    color: #34ff37;
+    transform: scale(1.1);
 }
 
 .header-logo a span {
-    color: #f5384e;
+    font-family: 'Comfortaa', cursive;
+    color: #34ff37;
+    transition: .4s;
 }
+.header-logo a:hover span {
+    color: #1d9bf0;
+}
+/* ff8c34 */
 
 .header-search {
     display: flex;
@@ -26,4 +38,11 @@
     width: 72px;
     height: 72px;
     border-radius: 100%;
+    border: 1px solid #1d9bf0;
+    transition: .2s linear;
+}
+
+.avatar:hover {
+    transform: scale(1.15);
+    border: 1px solid #34ff37;
 }

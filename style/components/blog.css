@@ -11,6 +11,7 @@
 
 .blog-header h3 {
     font-size: 28px;
+    color: #fff;
 }
 
 .link {
@@ -18,17 +19,45 @@
     align-items: center;
     position: relative;
     height: 40px;
+    color: #bbb9b9;
+    transition: .3s;
 }
 
 .link > img {
     width: 16px;
     height: 16px;
     margin-right: 10px;
+    transition: .3s;
+    filter: invert(71%) sepia(0%) saturate(1590%) hue-rotate(148deg) brightness(103%) contrast(99%);
+}
+
+.comments-link:hover {
+    color: #1d9bf0;
+    transform: scale(1.1);
+}
+.comments-link:hover > img {
+    filter: invert(56%) sepia(32%) saturate(5719%) hue-rotate(179deg) brightness(97%) contrast(93%);
+}
+
+.forums-link:hover {
+    color: #ff00f2;
+    transform: scale(1.1);
+}
+.forums-link:hover > img {
+    filter: invert(19%) sepia(91%) saturate(3368%) hue-rotate(301deg) brightness(114%) contrast(132%);  }
+
+.user-link:hover {
+    color: #34ff37;
+    transform: scale(1.1);
+}
+.user-link:hover > img {
+    filter: invert(70%) sepia(92%) saturate(571%) hue-rotate(61deg) brightness(102%) contrast(101%);
 }
 
 .blog-desc {
     line-height: 1.4;
     margin: 20px 0;
+    color: #fff;
 }
 
 .blog-info {
@@ -39,4 +68,23 @@
 .blog-info > .link > img {
     width: 25px;
     height: 25px;
+}
+
+.dropdown li{
+    background: #22303c; 
+}
+.dropdown:active {
+    color: #34ff37;
+}
+.dropdown li a {
+    color: #1d9bf0;
+    transition: .3s;
+}
+.dropdown li a:first-child:hover {
+    background-color: #1d9cf0b5;
+    color: #33ff36d8;
+}
+.dropdown li:last-child a:hover {
+    background-color: red;
+    color: #fff;
 }

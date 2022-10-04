@@ -2,21 +2,21 @@
 	<div class="header-logo">
 	    <a href="index.php?page=1">Net<span>Blog</span></a>	
 	</div>
-	<form class="header-search">
-		<input type="hidden" name="page" value="1">
-		<input type="text" class="input-search" name="q" placeholder="Поиск по блогам">
-		<button class="button button-search">
-			<img src="images/search.svg" alt="">	
-			Найти
-		</button>
-	</form>
+	<?php 
+		if(!isset($_GET["id"]) || !isset($_GET["nickname"])) {
+	?>
+		<form class="header-search">
+			<input type="hidden" name="page" value="1">
+			<input type="text" class="input-search" name="q" placeholder="Поиск по блогам">
+			<button class="button button-search">
+				<img src="images/search.svg" alt="">	
+				Найти
+			</button>
+		</form>
+	<?php } else { echo "proverka"; } ?>
 	<div>
 		
 		<?php
-			// $query = mysqli_query($con, "SELECT * FROM users");
-			// $user_info = mysqli_fetch_assoc($query);
-			// echo $user_info["avatar"];
-
 			if($_SESSION != "") {
 				$user_prep = mysqli_prepare($con, "SELECT * FROM users WHERE id=?");
 				mysqli_stmt_bind_param($user_prep, "s", $_SESSION["user_id"]);
@@ -28,9 +28,7 @@
 			if(isset($_SESSION["user_id"])) {
 		?>
 			<a href="profile.php?nickname=<?=$_SESSION["nickname"]?>">
-				<?php if(isset($user["ava"])) { ?>
-					<img class="avatar" src="<?=$BASE_URL?>/<?=$user["ava"]?>" alt="Avatar">
-				<?php } ?>
+				<img class="avatar" src="<?=$BASE_URL?>/<?=$user["ava"]?>" alt="Avatar">
 			</a>
 		<?php
 			} else {

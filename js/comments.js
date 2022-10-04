@@ -1,5 +1,3 @@
-
-
 const authorBlog = document.body.dataset.authorid
 const baseurl = document.body.dataset.baseurl
 const blogId = document.body.dataset.blogid
@@ -19,6 +17,9 @@ function getComments() {
 
 getComments()
 
+const ava = axios.get(`${baseurl}/${avatar}`)
+console.log(ava);
+
 function showComments(comments) {
     let divHTML = `<h2> ${comments.length} комментария </h2>`
     for(let i in comments) {
@@ -29,10 +30,10 @@ function showComments(comments) {
         divHTML += `
         <div class="comment">
             <div class="comment-header">
-                <div>
-                    <img src="images/avatar.png" alt="">
-                    ${comments[i]["full_name"]}
-                </div>
+                <a href="${baseurl}/profile.php?nickname=${comments[i]["nickname"]}">
+                    <img class="avatar" src="${comments[i]["ava"]}" alt="">
+                    <p>${comments[i]["full_name"]}</p>
+                </a>
                 ${deleteButton}
             </div>
             <div class="flex-comment">

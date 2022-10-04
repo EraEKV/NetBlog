@@ -17,7 +17,12 @@
                     <input class="input" type="text" name="email" placeholder="Введите email" required>
                 </fieldset>
                 <fieldset class="fieldset">
-                    <input class="input" type="password" name="password" placeholder="Введите пароль" required>
+                    <input class="input" id="pass1" type="password" name="password" placeholder="Введите пароль" required>
+                    <img class="eye-btn" id="eye1" src="" alt="">
+                </fieldset>
+                <fieldset class="fieldset" style="display: none;">
+                    <input class="input" id="pass2" type="password" placeholder="Введите пароль">
+                    <img class="eye-btn" id="eye2" src="" alt="">
                 </fieldset>
 
                 <fieldset class="fieldset">
@@ -26,5 +31,6 @@
 			</form>
 		</div>
 	</section>
+    <script src="js/eye.js"></script>
 </body>
 </html>

@@ -43,20 +43,10 @@
 				mysqli_stmt_execute($user_prep);
 				$user_info = mysqli_stmt_get_result($user_prep);
 				$user = mysqli_fetch_assoc($user_info);
-				if(isset($user["ava"])) {
 		?>
 				<a href="profile.php?nickname=<?=$_SESSION["nickname"]?>">
 					<img class="avatar" src="<?=$BASE_URL?>/<?=$user["ava"]?>" alt="Avatar">
 				</a>
-			<?php
-				} else {
-			?>
-				<a href="profile.php?nickname=<?=$_SESSION["nickname"]?>">
-					<img class="avatar" src="images/avatars/base_avatar.png" alt="Avatar">
-				</a>
-			<?php
-				}
-			?>
 		<?php
 			} else {
 		?>
@@ -101,7 +91,9 @@
 					while($blog = mysqli_fetch_assoc($blogs)) {
 			?>
 					<div class="blog-item">
-					<img class="blog-item--img" src="<?=$BASE_URL?>/<?=$blog["img"]?>" alt="">
+					<a class="blog_link" href="<?=$BASE_URL?>/blog-details.php?id=<?=$blog["id"]?>">
+						<img class="blog-item--img" src="<?=$BASE_URL?>/<?=$blog["img"]?>" alt="">
+					</a>
 					<div class="blog-info">
 						<span class="link">
 							<img src="images/date.svg" alt="">
@@ -112,7 +104,7 @@
 							<img src="images/visibility.svg" alt="">
 							21
 						</span>
-						<a class="link">
+						<a class="link comments-link" href="<?=$BASE_URL?>/blog-details.php?id=<?=$blog["id"]?>">
 							<img src="images/message.svg" alt="">
 							4
 						</a>
@@ -149,8 +141,9 @@
 					<p class="blog-desc">
 						<?=$blog["description"]?>
 					</p>
-
-					
+					<br>
+					<hr style="border: 1px solid #1d9bf0">
+					<br>
 				</div> 
 			<?php
 					}

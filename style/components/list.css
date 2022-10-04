@@ -2,9 +2,14 @@
     text-decoration: none;
     height: 50px;
     line-height: 50px;
-    border-bottom: 1px dotted #e7e7e7;
+    border-bottom: 1px solid #bbb9b9;
     display: block;
-    color: #00dcc2;
+    color: #1d9bf0;
+    transition: .3s;
+}
+
+.list-item:hover {
+    color: #34ff37;
 }
 
 .list-item:first-of-type {

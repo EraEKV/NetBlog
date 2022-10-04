@@ -79,47 +79,48 @@
 
 <section class="container page">
 	<div class="page-content">
-			<h2 class="page-title">Блоги по программированию</h2>
-			<p class="page-desc">Популярные и лучшие публикации по программированию для начинающих и профессиональных программистов и IT-специалистов.</p>
+			<h2 class="page-title">Блоги по самым разным темам</h2>
+			<p class="page-desc">Популярные блоги различных авторов и популярных личностей.</p>
 		<div class="blogs">
 			<?php
 				if(mysqli_num_rows($query_blog) > 0) {
 					while($blog = mysqli_fetch_assoc($query_blog)) {
 			?>
 				<div class="blog-item">
-					<img class="blog-item--img" src="<?=$BASE_URL?>/<?=$blog["img"]?>" alt="">
+					<a class="blog_link" href="<?=$BASE_URL?>/blog-details.php?id=<?=$blog["id"]?>">
+						<img class="blog-item--img" src="<?=$BASE_URL?>/<?=$blog["img"]?>" alt="">
+					</a>
 					<div class="blog-info">
 						<span class="link">
-							<img src="<?=$BASE_URL; ?>/images/date.svg" alt="">
+							<img src="<?=$BASE_URL?>/images/date.svg" alt="">
 							<?=to_time_ago($blog["date"])?>
 						</span>
 						<span class="link">
 							<img src="images/visibility.svg" alt="">
 							21
 						</span>
-						<a class="link">
+						<a class="link comments-link"  href="<?=$BASE_URL?>/blog-details.php?id=<?=$blog["id"]?>">
 							<img src="images/message.svg" alt="">
 							4
 						</a>
-						<span class="link">
+						<a class="link forums-link" href="<?=$BASE_URL?>/index.php?page=1&cat_id=<?=$blog["category_id"]?>">
 							<img src="images/forums.svg" alt="">
 							<?=$blog["name"]?> 
-						</span>
-						<a class="link" href="<?=$BASE_URL?>/profile.php?nickname=<?=$blog["nickname"]?>">
+						</a>
+						<a class="user-link link" href="<?=$BASE_URL?>/profile.php?nickname=<?=$blog["nickname"]?>">
 							<img src="images/person.svg" alt="">
 							<?=$blog["nickname"]?> 
 						</a>
 					</div>
 					<div class="blog-header">
-						<a class="blog_link" href="<?=$BASE_URL?>/blog-details.php?id=<?=$blog["id"]?>">
 							<h3><?=$blog["title"]?></h3>
-						</a>
 					</div>
 					<p class="blog-desc">
 						<?=$blog["description"]?>
 					</p>
-					
-					
+					<br>
+					<hr style="border: 1px solid #1d9bf0">
+					<br>
 				</div>
 			<?php
 					}

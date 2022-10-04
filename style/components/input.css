@@ -1,13 +1,14 @@
 .input-search {
-    border: 1px solid #E7E7E7;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    background-color: #15202b;
+    border: 1px solid #1d9bf0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     outline: none;
     padding: 0 20px;
 }
 .input-search:focus-visible {
-    color: #f5384e;
-    border: 1px solid #f5384e;
+    color: #34ff37;
+    border: 1px solid #34ff37;
     border-right: none;
 }
 
@@ -24,10 +25,12 @@
     width: 100%;
     height: 50px;
     padding: 0 24px;
-    border: 1px solid #E7E7E7;
-    border-radius: 4px;
+    border: 1px solid #1d9bf0;
+    border-radius: 10px;
+    background-color: #15202b;
     outline: none;
     box-sizing: border-box;
+    color: #8899a6;
 }
 .input-textarea {
     padding-top: 24px;
@@ -36,7 +39,9 @@
     height: 100px;
 }
 .input:focus-visible {
-    outline: 1px solid #f5384e;
+    outline: none;
+    border: 1px solid #34ff37;
+    color: #34ff37;
 }
 
 .input-file {
@@ -49,4 +54,20 @@
     height: 100%;
     opacity: 0;
     left: 0;
+}
+
+.input option {
+    color: #1d9bf0;
+}
+.input option:hover {
+    color: #34ff37;
+    background-color: #1d9bf0;
+}
+
+option .cat-list {
+    color: #1d9bf0;
+}
+.cat-list:hover {
+    color: #34ff37;
+    background-color: #1d9bf0;
 }

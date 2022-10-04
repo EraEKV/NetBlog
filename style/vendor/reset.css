@@ -48,3 +48,10 @@ table {
 html {
     font-size: 16px;
 }
+a {
+	text-decoration: none;
+}
+a::selection , h1::selection , h2::selection , h3::selection , h4::selection , h5::selection , h6::selection , p::selection {
+	background: #1d9cf0b5;
+	color: #33ff36d8;
+}

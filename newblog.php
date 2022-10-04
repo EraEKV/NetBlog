@@ -26,17 +26,15 @@
 			</fieldset>
 
 			<fieldset class="fieldset">
-				<select name="category_id" id="" class="input">
+				<select name="category_id" class="input">
 					<?php
 						$categories = mysqli_query($con, 
 						"SELECT * FROM categories");
 
 						while($categ = mysqli_fetch_assoc($categories)) {
 					?>
-						<option value="<?=$categ["id"]?>"><?=$categ["name"]?></option>
-					<?php 
-						}
-					?>
+						<option class="cat-list" value="<?=$categ["id"]?>"><?=$categ["name"]?></option>
+					<?php } ?>	
 				</select>
 			</fieldset class="fieldset">
 			

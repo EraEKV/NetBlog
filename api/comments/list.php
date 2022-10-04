@@ -8,7 +8,7 @@
 
     $id = $_GET["id"];
 
-    $query_comments = mysqli_query($con, "SELECT c.*, u.full_name FROM comments c 
+    $query_comments = mysqli_query($con, "SELECT c.*, u.* FROM comments c 
     LEFT OUTER JOIN users u ON u.id=c.author_id WHERE c.blog_id=$id");
     // php => js json.encode()
     // js => php json.decode()

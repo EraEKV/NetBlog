@@ -10,7 +10,7 @@
 
 	$id = $_GET["id"];
 	$query_blog = mysqli_query($con,
-	"SELECT b.*, c.name, u.nickname FROM blogs b
+	"SELECT b.*, c.name, u.nickname, u.ava FROM blogs b
 	LEFT OUTER JOIN categories c ON c.id=b.category_id
 	LEFT OUTER JOIN users u ON u.id=b.author_id
 	WHERE b.id=$id");
@@ -59,9 +59,9 @@ data-blogid="<?=$blog["id"]?>"
 						<img src="images/forums.svg" alt="">
 						<?=$blog["name"]?>
 					</span>
-					<a class="link">
-						<img src="images/person.svg" alt="">
-						<?=$blog["nickname"]?>
+					<a class="user-link link" href="<?=$BASE_URL?>/profile.php?nickname=<?=$blog["nickname"]?>">
+							<img src="images/person.svg" alt="">
+							<?=$blog["nickname"]?> 
 					</a>
 				</div>
 

@@ -6,10 +6,6 @@
 	<?php include "views/head.php"; ?>
 </head>
 <body>
-	
-<?php include "views/header.php" ?>
-    
-
 	<section class="container page">
 		<div class="auth-form">
             <?php 
@@ -29,15 +25,15 @@
                     <input class="input" type="text" name="nickname" value="<?=$user["nickname"]?>" placeholder="Nickname">
                 </fieldset>
                 <fieldset class="fieldset">
-                    <input class="input" type="password" id="passToggle1" name="password" placeholder="Введите старый пароль">
-                    <img id="eyeToggle" src="" alt="">
+                    <input class="input" type="password" id="pass1" name="password" placeholder="Введите старый пароль">
+                    <img id="eye1" class="eye-btn" src="" alt="">
                 </fieldset>
                 <fieldset class="fieldset">
-                    <input class="input" type="password" id="passToggle2" name="new_password"  placeholder="Введите новый пароль">
-                    <img id="eyeToggle" src="" alt="">
+                    <input class="input" type="password" id="pass2" name="new_password"  placeholder="Введите новый пароль">
+                    <img id="eye2" class="eye-btn" src="" alt="">
                 </fieldset>
                 <fieldset>
-                    <textarea name="about" cols="51" rows="10" value="<?=$user["about"]?>" placeholder="Кратко напишите о себе"></textarea>
+                    <textarea class="about" name="about" cols="51" rows="10" value="<?=$user["about"]?>" placeholder="Кратко напишите о себе"></textarea>
                 </fieldset>
 
                 <fieldset class="fieldset">
@@ -52,6 +48,6 @@
 		</div>
 	</section>
 
-    <script src="js/eye_togle.js"></script>
+    <script src="js/eye.js"></script>
 </body>
 </html>

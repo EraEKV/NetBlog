@@ -30,10 +30,12 @@
                     <input class="input" type="text" name="nickname" placeholder="Nickname" required>
                 </fieldset>
                 <fieldset class="fieldset">
-                    <input class="input" type="password" name="password" placeholder="Введите пароль" required>
+                    <input class="input" type="password" id="pass1" name="password" placeholder="Введите пароль">
+                    <img id="eye1" class="eye-btn" src="" alt="">
                 </fieldset>
                 <fieldset class="fieldset">
-                    <input class="input" type="password" name="password2" placeholder="Подтвердить пароль" required>
+                    <input class="input" type="password" id="pass2" name="password2"  placeholder="Подтвердите пароль">
+                    <img id="eye2" class="eye-btn" src="" alt="">
                 </fieldset>
                 
 
@@ -43,6 +45,6 @@
 			</form>
 		</div>
 	</section>
-    <!-- <?php echo $_FILES["image"]["name"]; ?> -->
+    <script src="js/eye.js"></script>
 </body>
 </html>

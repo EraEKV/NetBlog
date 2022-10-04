@@ -9,6 +9,9 @@
     margin: 0 auto;
     display: block;
     margin-bottom: 10px;
+    border-radius: 100%;
+    border: 1px solid #34ff37;
+    background-color: #1d9bf0;
 }
 
 .user-profile h1 {
@@ -16,6 +19,7 @@
     font-weight: 700;
     margin: 10px 0;
     text-align: center;
+    color: #bbb9b9;
 }
 
 .user-profile h2,
@@ -23,6 +27,7 @@
     line-height: 1.4;
     margin: 10px 0;
     text-align: center;
+    color: #bbb9b9;
 }
 
 .user-profile a {
@@ -32,4 +37,19 @@
 
 .user-profile .button-danger{
     margin-top: 30px;
+}
+
+
+.about {
+    box-sizing: border-box;
+    width: 400px;
+    padding: 20px;
+    background-color: #15202b;
+    border-radius: 10px;
+    border: 1px solid #1d9bf0;
+}
+.about:focus-visible {
+    color: #34ff37;
+    border: 1px solid #34ff37;
+    outline: none;
 }
