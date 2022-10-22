@@ -8,14 +8,18 @@
 	<?php
 		session_start();
 		include "config/db.php";		
+		include "config/base_url.php";		
 	?>
 
 	<script>
-		<?php if(isset($_SESSION["user_id"])) { ?>
+		<?php if(isset($_SESSION["user_id"], $_SESSION["nickname"])) { ?>
 			localStorage.setItem("user_id", <?=$_SESSION["user_id"]?>)
+			localStorage.setItem("nickname", "<?=$_SESSION["nickname"]?>")
 		<?php } else { ?>
-			if(localStorage.getItem("user_id")) {
+			if(localStorage.getItem("user_id") && localStorage.getItem("nickname")) {
 				localStorage.removeItem("user_id")
+				localStorage.removeItem("nickname")
 			}
 		<?php } ?>
 	</script>
+		

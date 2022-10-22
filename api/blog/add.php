@@ -18,6 +18,9 @@
             $image_name = time().".".$ext;
             move_uploaded_file($_FILES["image"]["tmp_name"], "../../images/blogs/$image_name");
             $path = "images/blogs/".$image_name;
+            if($ext == "") {
+                $path = "";
+            }
 
             $prep = mysqli_prepare($con, 
             "INSERT INTO blogs (title, description, category_id, author_id, img)

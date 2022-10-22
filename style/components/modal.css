@@ -1,0 +1,234 @@
+
+.modal_window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: 10;
+}
+
+.modal_window .auth-form{
+    margin-top: 15px;
+}
+
+
+.modal_window.active {
+    width: 100%;
+}
+
+
+.modal_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;   
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+
+.modal_inner {
+    position: relative;
+    display: none;
+    width: 400px;
+    margin: 6.5vw auto;
+    height: auto;
+    background-color: #15202b;
+    border-radius: 30px;
+    border: 2px solid #1d9bf0;
+    padding: 30px;
+    text-align: center;
+}
+
+.modal_inner .auth-form {
+    margin-bottom: 0;
+}
+
+.modal_window.active .modal_inner {    
+    display: block;
+    z-index: 5;
+}
+
+.close span {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 14px;
+    color: #F53838;
+    font-weight: 700;
+    padding: 12px 16px;
+    width: auto;
+    border: 2px solid #F53838;
+    border-radius: 12px;
+    transition: .4s;
+}
+
+.close span:hover {
+    background-color: #F53838;
+    color: #fff;
+}
+
+
+.modal_inner h2 {
+    font-weight: 700;
+    font-size: 26px;
+    color: #34ff37;
+    margin-top: 30px;
+}
+
+
+.modal_input {
+    position: relative;
+    font-weight: 700;
+    border-radius: 10px;
+    border: 2px solid #555;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    display: block;
+    width: 70%;
+    height: 40px;
+    padding: 10px 10px 10px 0;
+    box-sizing: border-box;
+}
+
+.modal_input input {
+    position: absolute;
+    left: 6px;
+    width: 85%;
+    justify-content: left;
+    border: none;
+    outline: none;
+}
+
+.modal_input img {
+    cursor: pointer;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    margin-right: 0;
+    width: 24px;
+}
+
+.modal_input input:focus-visible {
+    color: #F53838;
+    font-weight: 700;
+}
+
+.modal_inner input:focus-visible .modal_input {
+    border: 2px solid #F53838;
+}
+
+/* .pass_input.active {
+    text-transform: logical;
+} */
+
+
+.modal_btn {
+    cursor: pointer;
+    margin-top: 5px;
+    background-color: #fff;
+    border: 2px solid #F53838;
+    color: #fff;
+    color: #F53838;
+    width: auto;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    box-shadow: 40px 40px 40px 40px rgba(0, 0, 0, 0.01);
+    transition: .4s;
+}
+
+.modal_btn:hover {
+    background-color: #F53838;
+    color: #fff;
+}
+
+
+.modal_inner p {
+    margin-top: 30px;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.modal_inner p b {
+    font-weight: bold;
+}
+
+@media(max-width: 900px) {
+    .modal_inner h2 {
+        font-size: 24px;
+    }
+}
+
+@media(max-width: 800px) {
+    .close span {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .modal_inner h2 {
+        font-size: 22px;
+    }
+
+    .modal_inner .auth-form .form {
+        margin-top: 0;
+    }
+}
+
+@media(max-width: 700px) {
+    .modal_inner {
+        width: 365px;
+    }
+
+    .modal_inner .auth-form .form {
+        width: 250px;
+    }
+
+    .modal_inner input, .modal_inner .auth-form .fieldset {
+        width: 250px;
+    }
+
+    .close span {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .modal_inner .input {
+        padding: 0 14px;
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 550px) {
+    .modal_inner h2 {
+        margin-top: 20px;
+        font-size: 19px;
+    }
+
+    .modal_inner .eye-btn {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+@media(max-width: 450px) {
+    .modal_inner {
+        width: 310px;
+        height: 330px;
+    }
+
+    .close span {
+        padding: 8px 10px;
+    }
+}
+
+@media(max-width: 400px) {
+    .modal_inner .fieldset .input {
+        font-size: 11px;
+        padding: 0 12px;
+    }
+}

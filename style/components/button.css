@@ -57,9 +57,127 @@
     gap: 20px;
 }
 
-
 .button-danger{
     text-decoration: none;
     background-color: #FF0000;
     color: #fff;
+}
+
+
+.button-log.adaptive {
+    padding: 10px;
+    display: none;
+    align-items: center;
+}
+
+.button-log.adaptive > img {
+    width: 25px;
+    height: 25px;
+    margin: 0 auto;
+    filter: invert(99%) sepia(0%) saturate(2%) hue-rotate(320deg) brightness(104%) contrast(100%);
+}
+
+
+@media(max-width: 1150px) {
+    .button {
+        height: 42px;
+        font-size: 14px;
+    }
+    .page-block .button {
+        height: 50px;
+    }
+}
+
+@media(max-width: 1000px) {
+    .user--buttons {
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+@media(max-width: 900px) {
+    .button-search {
+        padding: 0 10px;
+        height: 42px;
+        width: 80px;
+        font-size: 14px;
+    }
+
+    .button-search > img {
+        margin-right: 4px;
+    }
+
+    .button-group.log {
+        gap: 14px
+    }
+}
+
+@media(max-width: 800px) {
+    .button {
+        height: 42px;
+        padding: 0 12px;
+        font-size: 14px;
+    }
+
+    .button-group.log {
+        gap: 10px
+    }
+
+    .button-log {
+        display: none;
+    }
+
+    .button-log.adaptive > img {
+        width: 22px;
+        height: 22px;
+    }
+    .button-log.adaptive {
+        display: block;
+    }
+}   
+
+@media(max-width: 700px) {
+    .button {
+        font-size: 13px;
+        height: 40px;
+    }
+    .button-search {
+        font-size: 11px;
+        height: 38px;
+    }
+    .button-log.adaptive {
+        padding: 8px;
+    }
+}
+
+@media(max-width: 600px) {
+    .button-search {
+        display: none;
+    }
+
+    .button {
+        padding: 0 12px;
+        font-size: 13px;
+    }
+
+    .button-log.adaptive {
+        padding: 8px;
+    }
+}
+
+@media(max-width: 500px) {
+    .button-log.adaptive {
+        padding: 9px;
+    }
+    .button-log.adaptive > img {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+@media(max-width: 360px) {
+    .button-group.log {
+        gap: 6px;
+    }
 }

@@ -33,8 +33,8 @@
     color: #8899a6;
 }
 .input-textarea {
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: 14px;
+    padding-bottom: 14px;
     resize: none;
     height: 100px;
 }
@@ -70,4 +70,47 @@ option .cat-list {
 .cat-list:hover {
     color: #34ff37;
     background-color: #1d9bf0;
+}
+
+@media(max-width: 900px) {
+    .input-search {
+        width: 50%;
+        height: 40px;
+    }
+}
+
+@media(max-width: 700px) {
+    .input-search {
+        padding: 0 10px 0 16px;
+        width: 50%;
+        height: 36px;
+        font-size: 12px;
+    }
+
+    .input {
+        height: 45px;
+        font-size: 12px;
+    }
+
+    .input-textarea {
+        height: 100px;
+    }
+}
+
+@media(max-width: 650px) {
+    .input-search {
+        width: 40%;
+        height: 36px;
+        font-size: 11px;
+    }
+
+    .input {
+        font-size: 11px;
+    }
+}
+
+@media(max-width: 600px) {
+    .input-search {
+        display: none;
+    }
 }

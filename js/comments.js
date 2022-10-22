@@ -14,18 +14,42 @@ function getComments() {
         showComments(res.data);
     })
 }
-
 getComments()
 
-const ava = axios.get(`${baseurl}/${avatar}`)
-console.log(ava);
+function timeSinceAdaptive(date) {
+
+    var seconds = Math.floor((new Date() - date) / 1000);
+  
+    var interval = seconds / 31536000;
+  
+    if (interval > 1) {
+      return Math.floor(interval) + " г. назад";
+    }
+    interval = seconds / 2592000;
+    if (interval > 1) {
+      return Math.floor(interval) + " мес. назад";
+    }
+    interval = seconds / 86400;
+    if (interval > 1) {
+      return Math.floor(interval) + " дн. назад";
+    }
+    interval = seconds / 3600;
+    if (interval > 1) {
+      return Math.floor(interval) + " час. назад";
+    }
+    interval = seconds / 60;
+    if (interval > 1) {
+      return Math.floor(interval) + " мин. назад";
+    }
+    return Math.floor(seconds) + " сек. назад";
+}
 
 function showComments(comments) {
     let divHTML = `<h2> ${comments.length} комментария </h2>`
-    for(let i in comments) {
+    for(let i = comments.length - 1; i >= 0; i--) {
         let deleteButton = ``
         if(comments[i]["author_id"] == currentUser || currentUser == authorBlog) {
-            deleteButton = `<span onclick="removeComment(${comments[i]["id"]})"> Удалить коментарий </span>`
+            deleteButton = `<span onclick="removeComment(${comments[i]['id']})"> Удалить </span>`
         }
         divHTML += `
         <div class="comment">
@@ -36,7 +60,7 @@ function showComments(comments) {
                 </a>
                 ${deleteButton}
             </div>
-            <div class="flex-comment">
+            <div class="blog-desc">
                 <p>${comments[i]["text"]}</p>
             </div>
         </div>
@@ -46,21 +70,23 @@ function showComments(comments) {
     divComments.innerHTML = divHTML
 }
 
-
-addComment.onclick = function() {
-    axios.post(`${baseurl}/api/comments/add.php`, {
-        text:textarea.value,
-        blog_id:blogId
-    }).then(res => {
-        getComments()
-        textarea.value = ""
-    })
+if(currentUser != null) {
+    addComment.onclick = function() {
+        axios.post(`${baseurl}/api/comments/add.php`, {
+            text:textarea.value,
+            blog_id:blogId
+        }).then(res => {
+            getComments()
+            textarea.value = ""
+        })
+    }
 }
 
 
 function removeComment(id) {
     axios.delete(`${baseurl}/api/comments/delete.php?id=${id}`).then(res => {
         getComments()
+        console.log("gotcha");
     })
 } 
 

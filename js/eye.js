@@ -1,12 +1,12 @@
 
-eye1 = document.getElementById("eye1")
-eye2 = document.getElementById("eye2")
+eye1 = document.querySelector(".eye1")
+eye2 = document.querySelector(".eye2")
 path = "images/eye.svg"
 eye1.src = path
 eye2.src = path
 
 eye1.addEventListener("click", function showPassword() {
-    const input = document.getElementById("pass1")
+    const input = document.querySelector(".pass1")
     if(input.type == "password") {
         input.type = "text"
         eye1.src = "images/eye-closed.svg"
@@ -18,7 +18,7 @@ eye1.addEventListener("click", function showPassword() {
 })
 
 eye2.addEventListener("click", function showPassword() {
-    const input = document.getElementById("pass2")
+    const input = document.querySelector(".pass2")
     if(input.type == "password") {
         input.type = "text"
         eye2.src = "images/eye-closed.svg"

@@ -42,13 +42,12 @@
         
         if(isset($_FILES["image"], $_FILES["image"]["name"])) {
             $ext = end(explode(".", $_FILES["image"]["name"]));
-            if($ext == "") {
-                header("Location:$BASE_URL/register.php?error=100");
-                exit();
-            }
             $image_name = time().".".$ext;
             move_uploaded_file($_FILES["image"]["tmp_name"], "../../images/avatars/$image_name");
             $path = "images/avatars/".$image_name;
+            if($ext == "") {
+                $path = "images/avatars/base_avatar.png";
+            }
         } else {
             $path = "images/avatars/base_avatar.png";
         }
@@ -61,7 +60,7 @@
         mysqli_stmt_bind_param($prep1, "sssss", $email, $nickname, $full_name, $hash1, $path);
         mysqli_stmt_execute($prep1);
 
-        header("Location: $BASE_URL/login.php");
+        header("Location: $BASE_URL/index.php");
     } else {
         header("Location: $BASE_URL/register.php?error=3");
     }

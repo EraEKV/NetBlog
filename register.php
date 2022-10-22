@@ -12,8 +12,7 @@
 
 	<section class="container page">
 		<div class="auth-form">
-            <h1>Регистрация</h1>
-			<form class="form" action="<?= $BASE_URL?>/api/user/signup.php" method="POST"  enctype="multipart/form-data">
+			<form class="form" action="<?= $BASE_URL?>/api/user/signup.php" method="POST" enctype="multipart/form-data">
                 <fieldset class="fieldset">
                     <button class="button button-yellow input-file">
                         <input class="file_upload" type="file" name="image" placeholder="Выберите картинку для профиля">	
@@ -30,12 +29,12 @@
                     <input class="input" type="text" name="nickname" placeholder="Nickname" required>
                 </fieldset>
                 <fieldset class="fieldset">
-                    <input class="input" type="password" id="pass1" name="password" placeholder="Введите пароль">
-                    <img id="eye1" class="eye-btn" src="" alt="">
+                    <input class="input pass1" type="password" name="password" placeholder="Введите пароль">
+                    <img class="eye-btn eye1" src="images/eye.svg" alt="">
                 </fieldset>
                 <fieldset class="fieldset">
-                    <input class="input" type="password" id="pass2" name="password2"  placeholder="Подтвердите пароль">
-                    <img id="eye2" class="eye-btn" src="" alt="">
+                    <input class="input pass2" type="password" name="password2"  placeholder="Подтвердите пароль">
+                    <img class="eye-btn eye2" src="images/eye.svg   " alt="">
                 </fieldset>
                 
 

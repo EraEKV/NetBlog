@@ -27,7 +27,6 @@
 .header-logo a:hover span {
     color: #1d9bf0;
 }
-/* ff8c34 */
 
 .header-search {
     display: flex;
@@ -38,11 +37,41 @@
     width: 72px;
     height: 72px;
     border-radius: 100%;
+    background: #1d9cf08d;
     border: 1px solid #1d9bf0;
     transition: .2s linear;
 }
 
 .avatar:hover {
     transform: scale(1.15);
+    background: #34ff37a9;
     border: 1px solid #34ff37;
+}
+
+
+@media(max-width: 900px) {
+    .header-logo a {
+        font-size: 36px;
+    }
+
+    .avatar {
+        width: 62px;
+        height: 62px;
+    }
+    .header {
+        height: 100px;
+    }
+}
+
+@media(max-width: 700px) {
+    .header-logo a {
+        font-size: 28px;
+    }
+    .avatar {
+        width: 50px;
+        height: 50px;
+    }
+    .header {
+        height: 80px;
+    }
 }

@@ -16,7 +16,7 @@
         $user = mysqli_stmt_get_result($prep);
 
         if(mysqli_num_rows($user) == 0) {
-            header("Location: $BASE_URL/login.php?error=6");
+            header("Location: $BASE_URL/index.php?page=1&error=6");
             exit();
         }
 
@@ -25,9 +25,9 @@
         $_SESSION["user_id"] = $row["id"];
         $_SESSION["nickname"] = $row["nickname"];
         $_SESSION["full_name"] = $row["full_name"];
-
+        
         header("Location: $BASE_URL/profile.php?nickname=".$_SESSION["nickname"]);
     } else {
-        header("Location: $BASE_URL/login.php?error=5");
+        header("Location: $BASE_URL/index.php?page=1&error=5");
     }
 ?>

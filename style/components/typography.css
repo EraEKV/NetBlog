@@ -1,3 +1,17 @@
+b {
+    font-weight: 700;
+    color: #1d9bf0;
+    transition: .4s;
+}
+
+b:hover {
+    color: #34ff37;
+}
+
+textarea {
+    color: #fff;
+}
+
 .text-danger {
     color: #ff0000;
 }
@@ -20,3 +34,76 @@
     right: 15px;
     filter: invert(62%) sepia(12%) saturate(435%) hue-rotate(163deg) brightness(94%) contrast(89%);
 }
+
+/* #scrollTop {
+    position: fixed;
+    background: #fff;    
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    right: 40px;
+    bottom: 50px;
+    z-index: 3;
+    transition: .4s;
+}
+
+.scrollTop {
+    opacity: 1;
+    display: block;
+    transition: .4s;
+}
+
+.scrollTop.scrollTop_hide {
+    display: none;
+    opacity: 0;
+}
+
+.arrow {
+    width: 30px;
+    height: 30px;
+} */
+
+
+@media(max-width: 1000px) {
+    #scrollTop {
+        width: 40px;
+        height: 40px;
+        padding: 9px;
+        right: 20px;
+        bottom: 30px;
+    }
+
+    .arrow {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media(max-width: 600px) {
+    #scrollTop {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+    }
+
+    .arrow {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media(max-width: 400px) {
+    #scrollTop {
+        width: 35px;
+        height: 35px;
+        padding: 9px;
+    }
+
+    .arrow {
+        width: 18px;
+        height: 18px;
+    }
+}
+

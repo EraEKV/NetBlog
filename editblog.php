@@ -58,7 +58,7 @@
 				</fieldset>
 					
 				<fieldset class="fieldset">
-					<textarea class="input input-textarea" name="description" id="" cols="30" rows="10" placeholder="Описание"><?=$row['description'];?></textarea>
+					<textarea class="input input-textarea" name="description" cols="30" rows="10" placeholder="Описание"><?=$row['description']?></textarea>
 				</fieldset>
 				<fieldset class="fieldset">
 					<button class="button" type="submit">Сохранить</button>

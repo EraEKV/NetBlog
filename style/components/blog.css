@@ -31,6 +31,14 @@
     filter: invert(71%) sepia(0%) saturate(1590%) hue-rotate(148deg) brightness(103%) contrast(99%);
 }
 
+.like-link:hover {
+    color: #ffbf1f;
+    transform: scale(1.1);
+}
+.like-link:hover > img {
+    filter: invert(78%) sepia(64%) saturate(985%) hue-rotate(338deg) brightness(102%) contrast(104%);
+}
+
 .comments-link:hover {
     color: #1d9bf0;
     transform: scale(1.1);
@@ -88,3 +96,117 @@
     background-color: red;
     color: #fff;
 }
+
+.link.date-link.adaptive {
+    display: none;
+}
+
+
+@media(max-width: 1050px) {
+    .link {
+        font-size: 16px;
+    }
+    .blog-info > .link > img { 
+        width: 22px;
+        height: 22px;
+        margin-right: 4px;
+    }
+}
+
+@media(max-width: 1000px) {
+    .blog-header h3 {
+        font-size: 24px;
+    }
+    .blog-desc {
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 700px) {
+    .blog-header {
+        margin-top: 14px;
+    }
+
+    .link {
+        font-size: 16px;
+        height: 15px;
+    }
+    .link.date-link {
+        display: none;
+    }
+    .link.date-link.adaptive {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+@media(max-width: 650px) {
+    .blog-item {
+        margin-top: 30px;
+    }
+    
+    .blog-info > .link > img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .blog-header {
+        margin-top: 22px;
+        margin-bottom: 12px;
+    }
+    .blog-header h3 {
+        font-size: 20px;
+    }
+
+    .link {
+        font-size: 14px;
+    }
+
+    .link.date-link.adaptive {
+        margin: 0 0 10px 0;
+    }
+
+    .blog-desc {
+        margin: 20px 0;
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 450px) {
+    .blog-item {
+        margin-top: 14px;
+    }
+
+    .blog-header {
+        margin-top: 16px;
+    }
+    .blog-info > .link > img {
+        width: 19px;
+        height: 19px;
+    }
+    .link { 
+        font-size: 12px;
+    }
+    .link.date-link.adaptive {
+        margin-bottom: 5px;
+    }
+
+    .blog-header h3 {
+        font-size: 17px;
+    }
+
+    .blog-desc {
+        font-size: 13px;
+        margin: 14px 0 4px 0;
+    }
+}
+
+@media(max-width: 360px) {
+    .blog-header h3 {
+        font-size: 15px;
+    }
+
+    .blog-desc {
+        font-size: 12px;
+    }
+}   

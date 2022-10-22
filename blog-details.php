@@ -30,7 +30,7 @@
 </head>
 <body
 data-baseurl="<?=$BASE_URL?>"
-data-authorid="<?=$$blog["author_id"]?>"
+data-authorid="<?=$blog["author_id"]?>"
 data-blogid="<?=$blog["id"]?>"
 >
 
@@ -42,19 +42,35 @@ data-blogid="<?=$blog["id"]?>"
 			<div class="blog-item">
 				<img class="blog-item--img img-details" src="<?=$blog["img"]?>" alt="">
 
-                <div class="blog-info">
-					<span class="link">
+                <div class="blog-info blog--comment">
+					<span class="link date-link">
 						<img src="images/date.svg" alt="">
 						<?=to_time_ago($blog["date"])?>
 					</span>
-					<span class="link">
-						<img src="images/visibility.svg" alt="">
-						21
-					</span>
-					<a class="link">
-						<img src="images/message.svg" alt="">
-						4
-					</a>
+					<a <?php if(isset($_SESSION["user_id"])) { ?> onclick="likePress(<?=$number?>)"  href="<?=$BASE_URL?>/api/like/edit.php?user_id=<?=$_SESSION["user_id"]?>&blog_id=<?=$blog["id"]?>&details=1"  <?php } else { ?> onclick="openModalWindow()" <?php } ?> class="link like-link">
+						<?php
+								$total = 0;
+								if(isset($blog["id"]) && intval($blog["id"])) {
+									$check = mysqli_prepare($con, "SELECT * FROM likes WHERE blog_id=?");
+									mysqli_stmt_bind_param($check, "i", $blog["id"]);
+									mysqli_stmt_execute($check);
+									$likes = mysqli_stmt_get_result($check);
+									$img = '<img class="like-img" src="images/lightning.svg">';
+
+									if(mysqli_num_rows($likes) > 0) {
+											while($row = mysqli_fetch_assoc($likes)) {
+												$total++;
+												if(isset($_SESSION["user_id"]) && $_SESSION["user_id"] == $row["like_author"]) {
+													$img = '<img class="like-img" src="images/lightning_solid.svg">';
+												} 
+											
+										} 
+									} 
+									echo $img;
+								}
+							?>
+							<?= $total ?>
+						</a>
 					<span class="link">
 						<img src="images/forums.svg" alt="">
 						<?=$blog["name"]?>
@@ -66,7 +82,10 @@ data-blogid="<?=$blog["id"]?>"
 				</div>
 
 				<div class="blog-header">
-					<h3><?=$blog["title"]?></h3>
+					<h3>
+						<p class="link date-link adaptive"><?=to_time_ago_adaptive($blog["date"])?></p>
+						<?=$blog["title"]?>
+					</h3>
 				</div>
 				<p class="blog-desc">
 					<?=$blog["description"]?>
@@ -80,22 +99,19 @@ data-blogid="<?=$blog["id"]?>"
 			if(isset($_SESSION["user_id"])) {
 		?>
 			<span class="comment-add">
-                <textarea id="textarea" name="" class="comment-textarea" placeholder="Введитe текст комментария"></textarea>
+                <textarea id="textarea" class="input input-textarea" placeholder="Введитe текст комментария"></textarea>
                 <button id="add-btn" class="button">Отправить</button>
             </span>
 		<?php
 			} else {
 		?>
             <span class="comment-warning">
-                Чтобы оставить комментарий <a href="<?=$BASE_URL?>/register.php">зарегистрируйтесь</a> , или  <a href="<?=$BASE_URL?>/login.php">войдите</a>  в аккаунт.
+                Чтобы оставить комментарий <a href="<?=$BASE_URL?>/register.php">зарегистрируйтесь</a> , или  <a onclick="openModalWindow()">войдите</a>  в аккаунт.
             </span>
 		<?php 
 			}
 		?>
 	</div>
-
-    <?= include "views/categories.php"; ?>
-
 </section>	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="js/comments.js"></script>

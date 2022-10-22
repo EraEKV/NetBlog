@@ -20,3 +20,93 @@
     text-align: center;
     display: block;
 }
+
+.auth-form {
+    align-items: center;
+}
+
+.auth-form .fieldset.last-btn {
+    padding-top: 0;
+}
+
+@media(max-width: 1100px) {
+    .auth-form {
+        margin: 0 auto;
+    }
+
+    .auth-form h1 {
+        font-size: 30px;
+    }
+}
+
+@media(max-width: 700px) {
+    .auth-form .button {
+        height: 45px;
+        margin: 0 auto;
+        width: 300px;
+    }
+
+    .auth-form h1 {
+        font-size: 28px;
+    }
+
+    .auth-form .fieldset {
+        width: 300px;
+    }
+
+    .auth-form fieldset {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .auth-form fieldset .input {
+        margin: 0 auto;
+        width: 300px;
+    }
+
+    .eye-btn {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media(max-width: 600px) {
+    .auth-form .form {
+        margin-top: 20px;   
+    }
+
+    .auth-form h1 {
+        font-size: 26px;
+    }
+}
+
+@media(max-width: 450px) {
+    .auth-form .button {
+        height: 45px;
+        width: 240px;
+        font-size: 11px;
+    }
+
+    .auth-form h1 {
+        font-size: 22px;
+    }
+
+    .auth-form .fieldset {
+        width: 240px;
+    }
+
+    .auth-form fieldset .input {
+        margin: 0 auto;
+        padding: 0 18px;
+        width: 240px;
+    }
+
+    .auth-form fieldset .input-textarea {
+        padding-top: 12px;
+        margin-top: 10px;
+    }
+
+    .eye-btn {
+        width: 20px;
+        height: 20px;
+    }
+}

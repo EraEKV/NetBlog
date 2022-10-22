@@ -19,19 +19,22 @@
 
         if(isset($_FILES["image"], $_FILES["image"]["name"])) {
             $query = mysqli_query($con, "SELECT img FROM blogs WHERE id=$id");
-
-            if(mysqli_num_rows($query) > 0) {
-                $row = mysqli_fetch_assoc($query);
-                $old_path = "../../".$row["img"];
-                if(file_exists($old_path)) {
-                    unlink($old_path);
-                }
-            }
+            $row = mysqli_fetch_assoc($query);
 
             $ext = end(explode(".", $_FILES["image"]["name"]));
             $image_name = time().".".$ext;
             move_uploaded_file($_FILES["image"]["tmp_name"], "../../images/blogs/".$image_name);
             $path = "images/blogs/".$image_name;
+            if($ext == "") {
+                $path = $row["img"];
+            } else {
+                if(mysqli_num_rows($query) > 0) {
+                    $old_path = "../../".$row["img"];
+                    if(file_exists($old_path)) {
+                        unlink($old_path);
+                    }
+                }
+            }
 
             $prep = mysqli_prepare($con, "UPDATE blogs SET title=?, description=?, category_id=?, img=? WHERE id=? AND author_id=?");
             mysqli_stmt_bind_param($prep, "ssisii", $title, $description, $category_id, $path, $id, $user_id);

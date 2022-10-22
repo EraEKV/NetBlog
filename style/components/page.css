@@ -28,6 +28,10 @@
     padding: 65px;
     margin-bottom: auto;
 }
+.page-info.adaptive {
+    width: 100%;
+    display: none;
+}
 
 .page-header {
     display: flex;
@@ -79,4 +83,143 @@
     background-color: #fff;
     padding: 65px;
     background-color: #22303c;
+}
+
+@media(max-width: 1200px) {
+    .page-header h2 {
+        font-size: 30px;
+    }
+
+    .page-info {
+        padding: 45px;
+    }
+}
+
+@media(max-width: 1000px) {
+    .container.page.adaptive {
+        padding-top: 10px;
+    }
+
+    .page-title {
+        font-size: 30px;
+    }
+    .page-desc {
+        font-size: 18px;
+    }
+
+    .page-info.adaptive {
+        padding: 20px 30px;
+        display: block;
+    }
+    .page-info {
+        display: none;
+    }
+
+    .user-profile.adaptive {
+        display: flex;
+    }
+
+    .page-content {
+        width: 100%;
+        padding: 50px;
+    }
+}   
+
+@media(max-width: 800px) {
+    .page-header h2 {
+        font-size: 26px;
+    }
+    .page-title {
+        font-size: 26px;
+    }
+    .page-desc {
+        font-size: 16px;
+    }
+
+    .page-block {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .page-block .form {
+        margin-top: 10px;
+    }
+    .page-block .fieldset {
+        width: 100%;
+    }
+
+    
+}
+
+@media(max-width: 650px) {
+    .page-header h2 {
+        font-size: 23px;
+    }
+    .page-content {
+        padding: 40px;
+    }
+
+    .page-title {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+    .page-desc {
+        font-size: 14px;
+    }
+
+    .page-block .button {
+        height: 45px;
+    }
+}
+
+@media(max-width: 550px) {
+    .page-block {
+        padding: 30px;
+    }
+    .page-block .button {
+        height: 40px;
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 450px) {
+    .page-content {
+        padding: 30px;
+    }
+
+    .container.page.adaptive {
+        padding-top: 10px;
+    }
+
+    .page-header h2 {
+        font-size: 21px;
+    }
+
+    .page-title {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+    .page-desc {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 350px) {
+    .page-content {
+        padding: 15px;
+    }
+    .page-header h2 {
+        font-size: 19px;
+    }
+
+    .page-title {
+        font-size: 19px;
+    }
+    .page-desc {
+        font-size: 12px;
+    }
+
+    .page-block {
+        padding: 15px;
+        padding-top: 20px;
+    }
 }
