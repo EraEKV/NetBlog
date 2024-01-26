@@ -12,4 +12,5 @@ Dive into a world of boundless creativity and connectivity, where every tweet, e
 💻 Seamless Experience: Whether you're on a desktop, tablet, or smartphone, "Netblog" adapts effortlessly to your screen, ensuring a seamless experience wherever you go.
 
 Join us in "Netblog" and let your creativity soar beyond the limits of imagination. Your digital adventure awaits! 🚀
+
 blognet.great-site.net
