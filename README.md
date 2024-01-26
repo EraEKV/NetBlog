@@ -13,4 +13,4 @@ Dive into a world of boundless creativity and connectivity, where every tweet, e
 
 Join us in "Netblog" and let your creativity soar beyond the limits of imagination. Your digital adventure awaits! 🚀
 
-blognet.great-site.net
+Link to website: [NetBlog](blognet.great-site.net)
