@@ -1,3 +1,3 @@
 <?php
-    $BASE_URL = 'https://blogs-79qbo.ondigitalocean.app/netblog';
+    $BASE_URL = 'https://blogs-79qbo.ondigitalocean.app';
 ?>
