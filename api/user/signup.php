@@ -1,6 +1,6 @@
 <?php
-    include "../../config./base_url.php";
-    include "../../config./db.php";
+    include "../../config/base_url.php";
+    include "../../config/db.php";
 
     // isset и strlen - это валидация(проверка данных)
     if(isset($_POST["email"], $_POST["nickname"], $_POST["full_name"], $_POST["password"], $_POST["password2"]) 
@@ -10,7 +10,7 @@
     && strlen($_POST["password"]) > 0
     && strlen($_POST["password2"]) > 0
     ) {
-        $email = $_POST["email"];           // Создал переменные для каждого, чтобы терять меньше времени
+        $email = $_POST["email"];          
         $nickname = $_POST["nickname"];
         $full_name = $_POST["full_name"];
         $password = $_POST["password"];
@@ -18,7 +18,7 @@
 
         if($password != $password2) {
             header("Location: $BASE_URL/register.php?error=1");
-            exit();     // типа выйти из функции
+            exit();     
         }
 
         // if(strlen($password) <= 8 && strlen($password2) <= 8  && $password == $password2) {
@@ -60,7 +60,7 @@
         mysqli_stmt_bind_param($prep1, "sssss", $email, $nickname, $full_name, $hash1, $path);
         mysqli_stmt_execute($prep1);
 
-        header("Location: $BASE_URL/index.php");
+        header("Location: $BASE_URL/index.php");    
     } else {
         header("Location: $BASE_URL/register.php?error=3");
     }

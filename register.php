@@ -34,7 +34,7 @@
                 </fieldset>
                 <fieldset class="fieldset">
                     <input class="input pass2" type="password" name="password2"  placeholder="Подтвердите пароль">
-                    <img class="eye-btn eye2" src="images/eye.svg   " alt="">
+                    <img class="eye-btn eye2" src="images/eye.svg" alt="">
                 </fieldset>
                 
 
