@@ -10,7 +10,6 @@
     date_default_timezone_set('Asia/Almaty');
 
     // $con - это само подключение к БД(базе данных)
-<<<<<<< HEAD
     // $con = mysqli_connect("db-mysql-blr1-28936-do-user-17259326-0.k.db.ondigitalocean.com", "doadmin", "AVNS_cGBV2-u6mv1pdMBua3N", "defaultdb", 25060);     // blognet - Этто наше БД
     $con = mysqli_connect(
         getenv('DB_HOST'), 
@@ -20,16 +19,10 @@
         getenv('DB_PORT')
     );
     
-=======
->>>>>>> 776715e874da7a901d43bff1d78beb1aad4b165d
     if(mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: ".mysqli_connect_error();
         echo getenv('DB_HOST');
         exit();
     }
-<<<<<<< HEAD
     mysqli_set_charset($con, "utf8");
 ?>
-=======
-?>
->>>>>>> 776715e874da7a901d43bff1d78beb1aad4b165d
