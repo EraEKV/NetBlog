@@ -23,6 +23,9 @@
 }
 
 .page-info {
+    position: sticky;
+    top: 20px;
+    right: 0;
     width: calc(35% - 20px);
     background-color: #22303c;
     padding: 65px;
